@@ -195,11 +195,11 @@ button a:hover{
 }
 
 .header{
-  height: 85vh;
+  height: 65vh;
 }
 
 .header h1{
-  margin: 60px auto 80px;
+  margin: 60px auto 0px;
   max-width: 930px;
 }
 
