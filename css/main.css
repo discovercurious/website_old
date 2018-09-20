@@ -1,12 +1,4 @@
-/*! HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
-
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald:400,500,600');
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -19,8 +11,8 @@ html {
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'Rubik', sans-serif;
-    color: #556270;
+    font-family: 'Open Sans', sans-serif;
+    color: #404042;
 }
 
 
@@ -121,11 +113,11 @@ p {
 }
 
 a {
-    color: #FF6B6B;
+    color: #ce953b;
 }
 
 a:hover {
-    color: #FF6B6B;
+    color: #ce953b;
     text-decoration: none;
 }
 
@@ -164,7 +156,7 @@ a:hover {
 }
 
 button {
-    background-color: #FF6B6B;
+    background-color: #ce953b;
     margin: 50px auto 0;
     display: block;
     text-align: center;
@@ -214,7 +206,7 @@ button a:hover {
 
 .header h4,
 .header .italic {
-    color: #556270;
+    color: #404042;
     line-height: 1;
 }
 
@@ -248,16 +240,16 @@ button a:hover {
 }
 
 .dark {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#556270+0,3e5063+100 */
-    background: #556270;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#404042+0,3e5063+100 */
+    background: #404042;
     /* Old browsers */
-    background: -moz-linear-gradient(45deg, #556270 0%, #3e5063 100%);
+    background: -moz-linear-gradient(45deg, #404042 0%, #3e5063 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, #556270 0%, #3e5063 100%);
+    background: -webkit-linear-gradient(45deg, #404042 0%, #3e5063 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, #556270 0%, #3e5063 100%);
+    background: linear-gradient(45deg, #404042 0%, #3e5063 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#556270', endColorstr='#3e5063', GradientType=1);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#404042', endColorstr='#3e5063', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
     color: #fff;
 }
@@ -306,7 +298,7 @@ button a:hover {
 }
 
 .full-slide .col h4 a:hover {
-    border-bottom: 3px solid #FF6B6B;
+    border-bottom: 3px solid #ce953b;
 }
 
 .saying {
@@ -317,6 +309,8 @@ button a:hover {
     float: left;
     max-width: 100%;
     position: relative;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
 }
 
 .saying.active {
@@ -380,7 +374,7 @@ ul li:before {
 
 .carousel-item p {
     float: right;
-    color: #556270;
+    color: #404042;
     font-size: 2.0rem;
 }
 
@@ -401,7 +395,7 @@ footer p {
 
 footer .phone {
     float: right;
-    color: #FF6B6B;
+    color: #ce953b;
 }
 
 
