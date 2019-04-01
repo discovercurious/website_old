@@ -25,7 +25,7 @@ $color-gold2: #B4822E;
 // ---- End Brand colors  ----------
 // ---- Sizes
 $normal-size: 1rem;
-$min-window-w: 1024px;
+$max-content: 1100px;
 
 /* -----  Basic styling  ----- */
 
@@ -40,11 +40,18 @@ body {
     @include font-base;
     @include font-OS;
     font-size: 1.4rem;
+    color: $color-gray6;
 }
 
-a {}
+a {
+    color: $color-gold1;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
 
-a:hover {}
+a:hover {
+    color: $color-white;
+}
 
 a:focus {
     outline: 0 none transparent;
@@ -106,10 +113,261 @@ button:focus {
 }
 
 //-----------------------------------------------
-#app {
-    max-width: 800px;
-    overflow: hidden;
-    min-height: 100vh;
+#app {}
+
+.pageWidth {
+    max-width: $max-content;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+#top {
+    border-top: 0.5rem solid $color-gold1;
+    background-color: $color-gray5;
+    min-height: 90vh;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    >* {
+        width: 100%;
+    }
+    h2 {
+        font-size: 6rem;
+        font-weight: 300;
+        padding: 0 10vw;
+        line-height: 1.3;
+        letter-spacing: -0.03em;
+    }
+    .cta {
+        min-height: 10vh;
+        font-size: 2rem;
+        text-align: right;
+        margin-top: 2rem;
+    }
+    a {}
+    .sidebar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 1.5rem;
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        opacity: 0.5;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem !important;
+    margin-bottom: 2rem;
+    h1 {
+        width: 20rem;
+        height: 6rem;
+        text-indent: -9999px;
+        background: transparent url('./assets/curious_logo.svg') top left no-repeat;
+        background-size: contain;
+    }
+    a {
+        display: inline-block;
+        margin-left: 2rem;
+    }
+}
+
+.col2,
+.col3,
+.col4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col2>* {
+    flex-basis: 48%;
+}
+
+.col3>* {
+    flex-basis: 30%;
+}
+
+h3 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 6rem;
+    padding-bottom: 2rem;
+    max-width: 55%;
+    &:after {
+        content: "";
+        width: 60%;
+        height: 0.5rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: $color-gold1;
+    }
+}
+
+h4 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    span {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+#main {
+    padding: 8rem 0;
+    background-color: $color-gray1;
+    p:nth-of-type(1) {
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+    .col a:after {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-arrow-right);
+        display: block;
+        text-align: right;
+    }
+}
+
+#people {
+    h3 {
+        max-width: 100%;
+    }
+    .teamTop,
+    .teamBottom {
+        .pageWidth {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .leftSide {
+        flex-basis: 40%;
+    }
+    .rightSide {
+        flex-basis: 60%;
+    }
+    .teamTop {
+        color: $color-white;
+        background-color: $color-gold2;
+        .leftSide {
+            padding: 4rem 0;
+        }
+        .rightSide {
+            display: flex;
+            border-left: 1px solid $color-white;
+            border-right: 1px solid $color-white;
+            justify-content: space-between;
+        }
+    }
+    .pic {
+        flex-basis: 16.667%;
+        border-right: 1px solid $color-white;
+        border-left: 1px solid $color-white;
+        min-height: 100%;
+        background-color: $color-gold1;
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-position: center center;
+        z-index: 5;
+        transition: all 0.25s ease-in-out;
+        cursor: pointer;
+        &:after {
+            @extend %fa-icon;
+            @extend .fas;
+            content: fa-content($fa-var-arrow-up);
+            width: 4rem;
+            height: 4rem;
+            line-height: 4rem;
+            background-color: $color-gold2;
+            border: 2px solid $color-white;
+            border-radius: 50%;
+            text-align: center;
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            opacity: 0;
+            z-index: 100;
+            font-size: 2rem;
+            box-shadow: 0 0 0.4rem 0 rgba($color: #000000, $alpha: 0.2);
+            transition: all 0.25s ease-in-out;
+        }
+        &:hover {
+            z-index: 10;
+            transform: scale(1.05);
+        }
+        &.active {
+            cursor: default;
+            background-color: $color-white;
+            &:after {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
+            &:hover {
+                transform: scale(1);
+            }
+        }
+    }
+    .teamBottom {
+        padding: 8rem 0;
+        background-color: $color-gold1;
+    }
+    .questionList {
+        padding: 0;
+        margin: 0 0 0 5rem;
+        li {
+            list-style-type: none;
+            border-top: 2px solid $color-gold2;
+            padding: 1rem 0;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+        li:first-child {
+            border: 0 none transparent;
+        }
+    }
+    .questions {
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+        font-size: 1.5rem;
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        font-weight: 600;
+    }
+}
+
+#contact {
+    background-color: $color-gray1;
+    .pageWidth {
+        padding: 8rem 0;
+    }
+    h3 {
+        max-width: 100%;
+    }
+    input,
+    select,
+    textarea {
+        display: block;
+        width: 100%;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border: 0 none transparent;
+        border-left: 2px solid $color-gold1;
+        font-size: 1.6rem;
+    }
 }
 
 //-----------------------------------------------
