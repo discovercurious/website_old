@@ -50,7 +50,7 @@ a {
 }
 
 a:hover {
-    color: $color-white;
+    color: $color-gray6;
 }
 
 a:focus {
@@ -367,6 +367,12 @@ p {
         border: 0 none transparent;
         border-left: 2px solid $color-gold1;
         font-size: 1.6rem;
+    }
+    a:before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-map-marker-alt);
+        display: block;
     }
 }
 

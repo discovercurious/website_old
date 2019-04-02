@@ -6,14 +6,7 @@
     </div>
     <router-view/> -->
     <section id="top">
-      <header class="pageWidth">
-        <h1>Curious</h1>
-        <nav>
-          <router-link to="/">Services</router-link>
-          <a href="#">People</a>
-          <a href="#">Contact Us</a>
-        </nav>
-      </header>
+      <PageHeader></PageHeader>
       <div class="intro pageWidth">
         <h2>
         We’re a group of experienced consultants &amp; coaches helping business leaders overcome <a href="#">brand</a>, <a href="#">marketing</a>, and <a href="#">product</a> challenges.
@@ -68,11 +61,12 @@
 import Vue from 'vue';
 import Team from '@/components/team.vue';
 import Contact from '@/components/contact.vue';
+import PageHeader from '@/components/PageHeader.vue';
 
 export default Vue.extend({
   name: 'home',
   components: {
-    Team, Contact,
+    Team, Contact, PageHeader,
   },
 });
 </script>
